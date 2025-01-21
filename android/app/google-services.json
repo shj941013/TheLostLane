@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434531379639",
+    "project_id": "the-lost-lanes",
+    "storage_bucket": "the-lost-lanes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434531379639:android:39eefd5083ce9d4681a032",
+        "android_client_info": {
+          "package_name": "com.thelostLane.thelostlane"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9zkEMbDDPc9c0JJLjLlXJZrTEDHREcKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
