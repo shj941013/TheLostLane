@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:thelostlane/authentication/facebook_authentication.dart';
+import 'package:thelostlane/authentication/google_authentication.dart';
+import 'package:thelostlane/views/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -120,12 +123,38 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: size.height * 0.015,
                     ),
                     // OAUTH Logins
-                    socialIcons(size, Icons.facebook, "Continue with Facebook",
-                        Colors.blueAccent, 30),
+                    InkWell(
+                      onTap: () async {
+                        await FacebookAuthenticationService()
+                            .signInWithFacebook()
+                            .then(
+                              (value) => Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AppMainScreen(),
+                                ),
+                              ),
+                            );
+                      },
+                      child: socialIcons(size, Icons.facebook,
+                          "Continue with Facebook", Colors.blueAccent, 30),
+                    ),
 
                     //TODO:: GOOGLE AUTHENTICATION PART FROM VIDEO: 23:31
-                    socialIcons(size, FontAwesomeIcons.google,
-                        "Continue with Google", Colors.pink, 27),
+                    // TODO: Handle Errors from failed sign in
+                    InkWell(
+                        onTap: () async {
+                          await GoogleAuthenticationService()
+                              .signInWithGoogle()
+                              .then((value) => Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AppMainScreen(),
+                                    ),
+                                  ));
+                        },
+                        child: socialIcons(size, FontAwesomeIcons.google,
+                            "Continue with Google", Colors.pink, 27)),
                     socialIcons(size, Icons.apple, "Continue with Apple",
                         Colors.black, 30),
                     socialIcons(size, Icons.email_outlined,
