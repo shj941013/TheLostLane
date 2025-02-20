@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 
 class AppMainScreen extends StatefulWidget {
   const AppMainScreen({super.key});
@@ -15,7 +17,18 @@ class _AppMainScreenState extends State<AppMainScreen> {
   void initState() {
     page = [
       // const ExploreScreen(),
-      const Scaffold(),
+      Scaffold(
+        body: FlutterMap(
+          mapController: MapController(),
+          options: const MapOptions(),
+          children: [
+            TileLayer(
+                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+            ),
+          ],
+        ),
+      ),
       // const Wishlists(),
       const Scaffold(),
       const Scaffold(),
