@@ -1,7 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:thelostlane/models/category.dart';
-import 'package:thelostlane/models/place_model.dart';
 import 'package:thelostlane/views/login_screen.dart';
 
 void main() async {

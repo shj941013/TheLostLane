@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:thelostlane/views/explore_screen.dart';
 
 class AppMainScreen extends StatefulWidget {
   const AppMainScreen({super.key});
@@ -16,6 +16,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
   @override
   void initState() {
     page = [
+      const ExploreScreen(),
       // const ExploreScreen(),
       Scaffold(
         body: FlutterMap(
@@ -23,8 +24,8 @@ class _AppMainScreenState extends State<AppMainScreen> {
           options: const MapOptions(),
           children: [
             TileLayer(
-                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+              urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+              userAgentPackageName: 'dev.fleaflet.flutter_map.example',
             ),
           ],
         ),

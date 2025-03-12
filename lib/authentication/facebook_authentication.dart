@@ -19,6 +19,7 @@ class FacebookAuthenticationService {
     } catch (e) {
       print(e);
     }
+    return null;
   }
 
   Future<void> signOutFacebook() async {
