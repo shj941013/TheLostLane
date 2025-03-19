@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:thelostlane/views/explore_screen.dart';
+import 'package:thelostlane/views/profile_screen.dart';
 
 class AppMainScreen extends StatefulWidget {
   const AppMainScreen({super.key});
@@ -33,8 +34,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
       // const Wishlists(),
       const Scaffold(),
       const Scaffold(),
-      const Scaffold(),
-      const Scaffold(),
+      const ProfileScreen(),
       // const MessagesScreen(),
       // const ProfilePage(),
     ];
